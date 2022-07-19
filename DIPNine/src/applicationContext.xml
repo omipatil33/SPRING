@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="idStud1" class="cpc.pune.dipnine.Student">
+  <property name="sno" value="1"></property>
+  <property name="sname" value="Dhananjay"></property>
+  <property name="age" value="22"></property>
+</bean>
+
+<bean id="idRec1" class="cpc.pune.dipnine.Receipt">
+  <property name="rno" value="1"></property>
+  <property name="rdate" value="1-Jan-2017"></property>
+  <property name="ramt" value="100"></property>
+</bean>
+
+<bean id="idRec2" class="cpc.pune.dipnine.Receipt">
+  <property name="rno" value="2"></property>
+  <property name="rdate" value="2-Jan-2017"></property>
+  <property name="ramt" value="200"></property>
+</bean>
+
+<bean id="idRecList1" class="cpc.pune.dipnine.ReceiptList">
+  <constructor-arg>
+    <list>
+       <ref bean="idRec1"/>
+       <ref bean="idRec2"/>
+    </list>
+  </constructor-arg>
+</bean>
+  
+<bean id="idStud2" class="cpc.pune.dipnine.Student">
+  <property name="sno" value="2"></property>
+  <property name="sname" value="Vijay"></property>
+  <property name="age" value="24"></property>
+</bean>
+
+<bean id="idRec3" class="cpc.pune.dipnine.Receipt">
+  <property name="rno" value="3"></property>
+  <property name="rdate" value="3-Jan-2017"></property>
+  <property name="ramt" value="300"></property>
+</bean>
+
+<bean id="idRec4" class="cpc.pune.dipnine.Receipt">
+  <property name="rno" value="4"></property>
+  <property name="rdate" value="4-Jan-2017"></property>
+  <property name="ramt" value="400"></property>
+</bean>
+
+<bean id="idRecList2" class="cpc.pune.dipnine.ReceiptList">
+  <constructor-arg>
+    <list>
+       <ref bean="idRec3"/>
+       <ref bean="idRec4"/>
+    </list>
+  </constructor-arg>
+</bean>  
+  
+<bean id="idCourse" class="cpc.pune.dipnine.Course">  
+  <constructor-arg value="C1"></constructor-arg>
+  <constructor-arg value="CoreJava"></constructor-arg>
+  
+  <constructor-arg>
+   <map>
+     <entry key-ref="idStud1" value-ref="idRecList1"></entry>
+     <entry key-ref="idStud2" value-ref="idRecList2"></entry>
+   </map>
+  </constructor-arg>
+  
+</bean>    
+</beans>  

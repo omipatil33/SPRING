@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="idRec1" class="cpc.pune.dipseven.Receipt">
+ <property name="rno" value="1"></property>
+ <property name="rdate" value="1-Jan-2017"></property>
+ <property name="ramt" value="100"></property>
+</bean>
+
+<bean id="idRec2" class="cpc.pune.dipseven.Receipt">
+ <property name="rno" value="2"></property>
+ <property name="rdate" value="2-Jan-2017"></property>
+ <property name="ramt" value="200"></property>
+</bean>
+
+<bean id="idRec3" class="cpc.pune.dipseven.Receipt">
+ <property name="rno" value="3"></property>
+ <property name="rdate" value="3-Jan-2017"></property>
+ <property name="ramt" value="300"></property>
+</bean>
+  
+<bean id="idStud" class="cpc.pune.dipseven.Student">
+  <constructor-arg value="100" type="int"></constructor-arg>
+  <constructor-arg value="Dhananjay"></constructor-arg>
+  <constructor-arg value="22" type="int"></constructor-arg>
+  
+  <constructor-arg>
+    <list>
+       <ref bean="idRec1"/>
+       <ref bean="idRec2"/>
+       <ref bean="idRec3"/>
+    </list>  
+  </constructor-arg>
+  
+</bean>  
+  
+</beans>  
